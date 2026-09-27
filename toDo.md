@@ -11,5 +11,3 @@ Changes:
 2. 'We don't just sell turmeric—we grow it.' -> Add temparary 
 
 
-Shop Turneric(section):
-1.  
