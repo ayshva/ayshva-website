@@ -83,10 +83,10 @@ export default function SiteView({
 <div>
 <p style={cssStyle("font:600 12px 'DM Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#E8A329;margin:0 0 20px")}>{"Contact"}</p>
 <div style={cssStyle("display:grid;gap:12px")}>
-<a href={"tel:+919270264137"} style={cssStyle("font:400 15px 'DM Sans',sans-serif;color:rgba(248,243,236,.8)")}>{"+91 92702 64137"}</a>
-<a href={"mailto:connectayshva@gmail.com"} style={cssStyle("font:400 15px 'DM Sans',sans-serif;color:rgba(248,243,236,.8)")}>{"connectayshva@gmail.com"}</a>
-<a href={waHref} target={"_blank"} rel={"noopener noreferrer"} style={cssStyle("font:400 15px 'DM Sans',sans-serif;color:rgba(248,243,236,.8)")}>{"WhatsApp"}</a>
-<a href={"https://instagram.com/ayshva.official"} target={"_blank"} rel={"noopener noreferrer"} style={cssStyle("font:400 15px 'DM Sans',sans-serif;color:rgba(248,243,236,.8)")}>{"@ayshva.official"}</a>
+<a className="footer-contact-link" href="tel:+919270264137"><span className="footer-contact-icon footer-icon-phone" aria-hidden="true" /><span>+91 92702 64137</span></a>
+<a className="footer-contact-link" href="mailto:connectayshva@gmail.com"><span className="footer-contact-icon footer-icon-email" aria-hidden="true" /><span>connectayshva@gmail.com</span></a>
+<a className="footer-contact-link" href={waHref} target="_blank" rel="noopener noreferrer"><span className="footer-contact-icon footer-icon-whatsapp" aria-hidden="true" /><span>WhatsApp</span></a>
+<a className="footer-contact-link" href="https://instagram.com/ayshva.official" target="_blank" rel="noopener noreferrer"><span className="footer-contact-icon footer-icon-instagram" aria-hidden="true" /><span>@ayshva.official</span></a>
 </div>
 </div>
 </div>

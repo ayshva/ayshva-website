@@ -465,3 +465,12 @@
 .interactive-5:hover { background:rgba(248,243,236,.1) !important; }
 .interactive-6:hover { border-color:#0F3F21 !important; }
 .interactive-7:hover { background:#14512b !important; }
+
+.footer-contact-link { display:flex;align-items:center;gap:12px;min-height:32px;font:400 15px/1.5 'DM Sans',sans-serif;color:rgba(248,243,236,.8); }
+.footer-contact-link > span:last-child { min-width:0;overflow-wrap:anywhere; }
+.footer-contact-link:hover { color:#e8a329; }
+.footer-contact-icon { display:block;flex:0 0 18px;width:18px;height:18px;background:#e8a329;mask:var(--contact-icon) center/contain no-repeat;-webkit-mask:var(--contact-icon) center/contain no-repeat; }
+.footer-icon-phone { --contact-icon:url('../public/assets/icons/telephone.svg'); }
+.footer-icon-email { --contact-icon:url('../public/assets/icons/envelope.svg'); }
+.footer-icon-whatsapp { --contact-icon:url('../public/assets/icons/whatsapp.svg'); }
+.footer-icon-instagram { --contact-icon:url('../public/assets/icons/instagram.svg'); }

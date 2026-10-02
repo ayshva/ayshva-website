@@ -243,7 +243,7 @@ return <>
 </section>
 <section aria-labelledby={"pano"} style={cssStyle("background:#F8F3EC;padding:clamp(48px,7vw,96px) 0 0")}>
 <div className={"wrap"} style={cssStyle("max-width:1320px;margin:0 auto;padding:0 20px;text-align:center")}>
-<h2 id={"pano"} style={cssStyle("font:700 clamp(24px,5.5vw,42px)/1.15 Montserrat,sans-serif;letter-spacing:-.02em;color:#0F3F21;margin:0 0 14px")}>{"Every step, from our farm to your kitchen."}</h2>
+<h2 id={"pano"} style={cssStyle("font:700 clamp(24px,5.5vw,42px)/1.15 Montserrat,sans-serif;letter-spacing:-.02em;color:#0F3F21;margin:0 0 14px")}>{"from our farm to your kitchen.".toUpperCase()}</h2>
 <p style={cssStyle("font:400 17px/1.7 'DM Sans',sans-serif;color:#4A5A4E;margin:0 0 48px")}>{"Grown, prepared, packed, and shared with care."}</p>
 </div>
 <img src={"/assets/bundled/53208748-c091-48de-90a2-f821561abd14.png"} alt={"Illustration of the AYSHVA journey: harvesting turmeric on the farm, washing and slicing, sun-drying, stone-grinding, and cooking in a family kitchen"} style={cssStyle("display:block;width:100%;max-width:1800px;margin:0 auto;height:auto;animation:wipeIn 1.4s .1s cubic-bezier(.3,.7,.2,1) both")} />
