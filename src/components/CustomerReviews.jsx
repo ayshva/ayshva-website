@@ -11,7 +11,7 @@ const reviews = [
 ];
 
 export default function CustomerReviews() {
-const [paused] = useState(false);
+const [paused, setPaused] = useState(false);
   return (
     <section className="customer-reviews" aria-labelledby="reviews">
       <div className="reviews-heading">
