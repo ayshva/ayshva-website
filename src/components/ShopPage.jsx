@@ -1,4 +1,6 @@
 import React from 'react';
+import LabReportDownloadLink from '../LabReportDownloadLink';
+import { labReport } from '../labReport';
 import { cssStyle, isVisible } from '../viewUtils';
 export default function ShopPage({values}) {
 const {navProcess, waHref, buyNow, sizes, price, sizeLabel, stockLine, dec, qty, inc, addToCart, announce, waSizeHref, shot1Style, shot2Style, pickShot1, pickShot2, faqs} = values;
@@ -60,7 +62,7 @@ return <>
 <svg width={"16"} height={"16"} viewBox={"0 0 24 24"} fill={"none"} stroke={"#0F3F21"} strokeWidth={"1.6"} strokeLinecap={"round"} aria-hidden={"true"}><path d={"M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.7-5A8.4 8.4 0 1 1 21 11.5Z"}></path></svg>{"\n            WhatsApp support — help choosing a size\n          "}</a>
 </div>
 <ul className={"g-2"} style={cssStyle("list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:14px 24px")}>
-<li style={cssStyle("font:500 15px/1.5 'DM Sans',sans-serif;color:#0F3F21;padding-left:22px;position:relative")}><span style={cssStyle("position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:#E8A329")}></span>{"Farm-grown"}</li>
+<li style={cssStyle("font:500 15px/1.5 'DM Sans',sans-serif;color:#0F3F21;padding-left:22px;position:relative")}><span style={cssStyle("position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:#E8A329")}></span>{"Farm grown"}</li>
 <li style={cssStyle("font:500 15px/1.5 'DM Sans',sans-serif;color:#0F3F21;padding-left:22px;position:relative")}><span style={cssStyle("position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:#E8A329")}></span>{"Rich natural colour"}</li>
 <li style={cssStyle("font:500 15px/1.5 'DM Sans',sans-serif;color:#0F3F21;padding-left:22px;position:relative")}><span style={cssStyle("position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:#E8A329")}></span>{"Fresh aroma"}</li>
 <li style={cssStyle("font:500 15px/1.5 'DM Sans',sans-serif;color:#0F3F21;padding-left:22px;position:relative")}><span style={cssStyle("position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:#E8A329")}></span>{"No artificial colours"}</li>
@@ -84,8 +86,8 @@ return <>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Shelf life"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Shelf life]"}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Packaging"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"Resealable stand-up pouch"}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Packed by"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"AYSHVA, Jalna, Maharashtra – 431213"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Batch information"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Batch number] · printed on pack"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Food licence"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Food licence number]"}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Batch information"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.batchNumber}{" · printed on pack"}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Food licence"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.foodLicenceNumber}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Customer care"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"+91 92702 64137 · connectayshva@gmail.com"}</dd>
 </dl>
 </div>
@@ -93,13 +95,13 @@ return <>
 <div style={cssStyle("background:#0F3F21;border-radius:22px;padding:44px")}>
 <h2 style={cssStyle("font:700 28px/1.2 Montserrat,sans-serif;color:#F8F3EC;margin:0 0 22px")}>{"Quality evidence"}</h2>
 <dl className={"g-dl"} style={cssStyle("margin:0 0 26px;display:grid;grid-template-columns:1fr;row-gap:13px;column-gap:20px")}>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Report"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{"[Laboratory report]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Laboratory"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{"[Laboratory name]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Date"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{"[Report date]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Parameters"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{"[Tested parameters]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Certification"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{"[Certification]"}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Report"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{labReport.title}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Laboratory"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{labReport.laboratoryName}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Date"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{labReport.reportDate}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Parameters"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{labReport.testedParameters}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:rgba(248,243,236,.6)")}>{"Certification"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#F8F3EC;margin:0")}>{labReport.certification}</dd>
 </dl>
-<button type={"button"} disabled={true} style={cssStyle("min-height:48px;padding:0 24px;border-radius:999px;background:rgba(248,243,236,.12);color:rgba(248,243,236,.55);font:600 14px 'DM Sans',sans-serif;border:1px solid rgba(248,243,236,.2);cursor:not-allowed")}>{"Download report — pending upload"}</button>
+<LabReportDownloadLink variant={"dark"}>{"Download report (PDF)"}</LabReportDownloadLink>
 </div>
 <div style={cssStyle("background:#EFE6D8;border-radius:22px;padding:40px 44px")}>
 <h2 style={cssStyle("font:700 26px/1.2 Montserrat,sans-serif;color:#0F3F21;margin:0 0 16px")}>{"From seed to spice"}</h2>

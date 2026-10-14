@@ -1,7 +1,7 @@
 import React from 'react';
 import { cssStyle, isVisible } from '../viewUtils';
 export default function CartDrawer({values}) {
-const {hasCart, closeCart, cartLines, cartEmpty, cartSubtotal, checkoutHref, waCartHref} = values;
+const {hasCart, closeCart, cartLines, cartEmpty, cartSubtotal, deliveryFee, cartTotal, checkoutHref, waCartHref} = values;
 return <>
 <div role={"dialog"} aria-modal={"true"} aria-label={"Your cart"} style={cssStyle("position:fixed;inset:0;z-index:60;animation:fadeIn .2s both")}>
 <div onClick={closeCart} style={cssStyle("position:absolute;inset:0;background:rgba(15,63,33,.4)")}></div>
@@ -37,7 +37,8 @@ return <>
 <p style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#4A5A4E;margin:0")}>{"Subtotal"}</p>
 <p style={cssStyle("font:600 16px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{cartSubtotal}</p>
 </div>
-<p style={cssStyle("font:400 13px/1.6 'DM Sans',sans-serif;color:#7A8A7E;margin:0 0 20px")}>{"Shipping: [Shipping information] — shown before payment, never added later."}</p>
+<div style={cssStyle("display:flex;justify-content:space-between;margin:0 0 8px")}><p style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#4A5A4E;margin:0")}>{"Delivery fee"}</p><p style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{deliveryFee}</p></div>
+<div style={cssStyle("display:flex;justify-content:space-between;margin:0 0 18px;padding-top:10px;border-top:1px solid rgba(15,63,33,.12)")}><p style={cssStyle("font:600 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"Total"}</p><p style={cssStyle("font:700 17px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{cartTotal}</p></div>
 <a href={checkoutHref} target={"_blank"} rel={"noopener noreferrer"} style={cssStyle("width:100%;display:flex;align-items:center;justify-content:center;min-height:54px;border-radius:999px;background:#0F3F21;color:#F8F3EC;font:600 15px 'DM Sans',sans-serif;border:none;cursor:pointer;margin-bottom:12px")}>{"Proceed to checkout"}</a>
 <a href={waCartHref} target={"_blank"} rel={"noopener noreferrer"} style={cssStyle("display:flex;align-items:center;justify-content:center;min-height:48px;font:600 14px 'DM Sans',sans-serif;color:#0F3F21")}>{"Need help with your order? WhatsApp us"}</a>
 </div>

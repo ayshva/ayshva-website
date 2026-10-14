@@ -1,4 +1,6 @@
 import React from 'react';
+import LabReportDownloadLink from '../LabReportDownloadLink';
+import { labReport } from '../labReport';
 import { cssStyle } from '../viewUtils';
 export default function ProcessPage({values}) {
 const {navShop} = values;
@@ -73,17 +75,17 @@ return <>
 <div className={"g-2"} style={cssStyle("display:grid;grid-template-columns:1fr;gap:20px")}>
 <article style={cssStyle("background:#fff;border:1px solid rgba(15,63,33,.12);border-radius:22px;padding:38px")}>
 <div style={cssStyle("display:flex;align-items:center;justify-content:space-between;margin-bottom:24px")}>
-<h3 style={cssStyle("font:600 21px Montserrat,sans-serif;color:#0F3F21;margin:0")}>{"[Laboratory report]"}</h3>
-<span style={cssStyle("padding:6px 14px;border-radius:999px;background:rgba(192,127,42,.12);font:600 11px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C07F2A")}>{"Pending"}</span>
+<h3 style={cssStyle("font:600 21px Montserrat,sans-serif;color:#0F3F21;margin:0")}>{labReport.title}</h3>
+<span style={cssStyle("padding:6px 14px;border-radius:999px;background:rgba(15,63,33,.08);font:600 11px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0F3F21")}>{"Sample data"}</span>
 </div>
 <dl className={"g-dl"} style={cssStyle("margin:0 0 26px;display:grid;grid-template-columns:1fr;row-gap:14px;column-gap:20px")}>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Laboratory name"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Laboratory name]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Report date"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Report date]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Batch / sample"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Batch number]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Tested parameters"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Tested parameters]"}</dd>
-<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Result summary"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Result summary]"}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Laboratory name"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.laboratoryName}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Report date"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.reportDate}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Batch / sample"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.batchNumber}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Tested parameters"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.testedParameters}</dd>
+<dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Result summary"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.resultSummary}</dd>
 </dl>
-<button type={"button"} style={cssStyle("min-height:48px;padding:0 24px;border-radius:999px;background:transparent;color:#7A8A7E;font:600 14px 'DM Sans',sans-serif;border:1.5px solid rgba(15,63,33,.18);cursor:not-allowed")}>{"View full report"}</button>
+<LabReportDownloadLink variant={"outline"}>{"View full report (PDF)"}</LabReportDownloadLink>
 </article>
 <article style={cssStyle("background:#EFE6D8;border-radius:22px;padding:38px")}>
 <h3 style={cssStyle("font:600 21px Montserrat,sans-serif;color:#0F3F21;margin:0 0 24px")}>{"Certifications and licences"}</h3>
