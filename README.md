@@ -34,3 +34,6 @@ Pages use hash navigation (`#home`, `#shop`, `#story`, `#process`, `#contact`), 
 ## Existing content limitations
 
 The original site includes image placeholders, sample reviews, and unfilled shipping, storage, certification, and laboratory information. These remain placeholders. Contact submission only displays the original local acknowledgement; no backend sends messages. Checkout opens WhatsApp with the selected order, rather than processing payment. Footer policy links lead to Contact until actual policy content is supplied.
+
+
+<!-- Vercel deployment trigger placeholder; remove after owner deploys. -->
