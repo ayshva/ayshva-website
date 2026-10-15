@@ -71,12 +71,11 @@ return <>
 <section style={cssStyle("padding:clamp(56px,8vw,104px) 0")}>
 <div className={"wrap"} style={cssStyle("max-width:1320px;margin:0 auto;padding:0 20px")}>
 <h2 style={cssStyle("font:700 clamp(24px,5.5vw,40px)/1.15 Montserrat,sans-serif;letter-spacing:-.02em;color:#0F3F21;margin:0 0 14px")}>{"Laboratory reports and certifications"}</h2>
-<p style={cssStyle("font:400 17px/1.75 'DM Sans',sans-serif;color:#4A5A4E;margin:0 0 44px;max-width:64ch")}>{"Each report is published whole, with the laboratory named and the batch identified. Until then, these cards stay in their pending state rather than showing an unverified number."}</p>
+<p style={cssStyle("font:400 17px/1.75 'DM Sans',sans-serif;color:#4A5A4E;margin:0 0 44px;max-width:64ch")}>{"This report covers chemical, heavy metal, crop and other contaminants, pesticide residues, and microbiological parameters across 243 tests. Download the full report to review each result, method, and limit."}</p>
 <div className={"g-2"} style={cssStyle("display:grid;grid-template-columns:1fr;gap:20px")}>
 <article style={cssStyle("background:#fff;border:1px solid rgba(15,63,33,.12);border-radius:22px;padding:38px")}>
 <div style={cssStyle("display:flex;align-items:center;justify-content:space-between;margin-bottom:24px")}>
 <h3 style={cssStyle("font:600 21px Montserrat,sans-serif;color:#0F3F21;margin:0")}>{labReport.title}</h3>
-<span style={cssStyle("padding:6px 14px;border-radius:999px;background:rgba(15,63,33,.08);font:600 11px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0F3F21")}>{"Sample data"}</span>
 </div>
 <dl className={"g-dl"} style={cssStyle("margin:0 0 26px;display:grid;grid-template-columns:1fr;row-gap:14px;column-gap:20px")}>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Laboratory name"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.laboratoryName}</dd>
@@ -95,7 +94,7 @@ return <>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Valid until"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Validity date]"}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E")}>{"Manufacturing"}</dt><dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"Malipura, At Post Sevali, Jalna – 431213"}</dd>
 </dl>
-<p style={cssStyle("font:400 14px/1.7 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"No badge is displayed until the certificate is uploaded and current."}</p>
+<p style={cssStyle("font:400 14px/1.7 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"The laboratory accreditation details are included in the report above."}</p>
 </article>
 </div>
 </div>

@@ -1,15 +1,15 @@
-/** Dummy laboratory report — replace paths and fields when the official PDF is ready. */
-export const LAB_REPORT_PDF_URL = '/assets/reports/ayshva-lab-report-sample.pdf';
-export const LAB_REPORT_DOWNLOAD_NAME = 'AYSHVA-turmeric-lab-report-sample.pdf';
+/** Current laboratory report PDF. Update the metadata below from the official report. */
+export const LAB_REPORT_PDF_URL = '/assets/reports/ayshva-turmeric-powder.pdf';
+export const LAB_REPORT_DOWNLOAD_NAME = 'Ayshva_Turmeric_Powder.pdf';
 
 export const labReport = {
-  title: 'Turmeric powder — quality analysis (sample)',
-  laboratoryName: 'Maharashtra Food Testing Laboratory (sample)',
-  reportDate: '15 January 2026',
-  batchNumber: 'AY-TUR-2026-001',
-  testedParameters: 'Moisture, curcumin, total ash, acid-insoluble ash, lead, chromaticity',
-  resultSummary: 'Sample values for layout only — replace with verified results from your official report.',
-  curcuminNote: 'Curcumin (sample): 4.2% — shown for demo; update from your verified certificate.',
-  certification: 'FSSAI licensed (sample)',
-  foodLicenceNumber: '2152XXXXXXXXXXXX (sample)',
+  title: 'Turmeric Powder — Test Report',
+  laboratoryName: 'AGSS Analytical and Research Lab (P) Ltd.',
+  reportDate: '8 August 2026',
+  batchNumber: 'AY001',
+  testedParameters: 'Chemical, heavy metals, crop and other contaminants, pesticide residues, and microbiological parameters (243 tests).',
+  resultSummary: 'The report states that the tested sample conforms to FSSR 2011 for the parameters tested.',
+  curcuminNote: 'Download the full report to view all test results and limits.',
+  certification: 'ISO/IEC 17025:2017 accredited laboratory',
+  foodLicenceNumber: 'As printed on product packaging',
 };

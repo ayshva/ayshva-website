@@ -174,7 +174,6 @@ return <>
 <article style={cssStyle("background:#fff;border:1px solid rgba(15,63,33,.12);border-radius:22px;padding:40px")}>
 <div style={cssStyle("display:flex;align-items:center;justify-content:space-between;margin-bottom:28px")}>
 <h3 style={cssStyle("font:600 22px Montserrat,sans-serif;color:#0F3F21;margin:0")}>{"Laboratory report"}</h3>
-<span style={cssStyle("padding:6px 14px;border-radius:999px;background:rgba(15,63,33,.08);font:600 11px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#0F3F21")}>{"Sample data"}</span>
 </div>
 <dl className={"g-dl"} style={cssStyle("margin:0;display:grid;grid-template-columns:1fr;row-gap:16px;column-gap:24px")}>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"Report title"}</dt>
@@ -189,13 +188,13 @@ return <>
 <dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.testedParameters}</dd>
 </dl>
 <p style={cssStyle("font:400 14px/1.7 'DM Sans',sans-serif;color:#7A8A7E;margin:22px 0 0;padding-top:22px;border-top:1px solid rgba(15,63,33,.1)")}>{labReport.curcuminNote}</p>
-<LabReportDownloadLink variant={"outline"}>{"Download sample report (PDF)"}</LabReportDownloadLink>
+<LabReportDownloadLink variant={"outline"}>{"Download laboratory report (PDF)"}</LabReportDownloadLink>
 </article>
 <div style={cssStyle("display:grid;gap:20px")}>
 <article style={cssStyle("background:#0F3F21;border-radius:22px;padding:34px 34px 36px")}>
 <h3 style={cssStyle("font:600 20px Montserrat,sans-serif;color:#F8F3EC;margin:0 0 14px")}>{"Certifications"}</h3>
 <p style={cssStyle("font:400 15px/1.7 'DM Sans',sans-serif;color:rgba(248,243,236,.72);margin:0 0 20px")}>{labReport.certification}{" · "}{labReport.foodLicenceNumber}</p>
-<p style={cssStyle("font:400 14px/1.6 'DM Sans',sans-serif;color:rgba(248,243,236,.55);margin:0")}>{"Badges appear only once the certificate is on file."}</p>
+<p style={cssStyle("font:400 14px/1.6 'DM Sans',sans-serif;color:rgba(248,243,236,.55);margin:0")}>{"The PDF includes detailed results, test methods, and limits for every parameter."}</p>
 </article>
 <article style={cssStyle("background:#EFE6D8;border-radius:22px;padding:34px")}>
 <h3 style={cssStyle("font:600 20px Montserrat,sans-serif;color:#0F3F21;margin:0 0 14px")}>{"Ingredient declaration"}</h3>
