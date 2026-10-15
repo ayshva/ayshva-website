@@ -1,5 +1,7 @@
 import React from 'react';
 import CustomerReviews from './CustomerReviews';
+import LabReportDownloadLink from '../LabReportDownloadLink';
+import { labReport } from '../labReport';
 import { cssStyle } from '../viewUtils';
 export default function HomePage({values}) {
 const {navShop, navStory, navProcess, navContact, waHref, buyNow, packLabel, sizes, price, sizeLabel, stockLine, dec, qty, inc, addToCart, announce, waSizeHref, sizesDark} = values;
@@ -14,7 +16,7 @@ return <>
 <button className={"banner-shop"} type={"button"} onClick={navShop}>{"SHOP NOW "}<span aria-hidden={"true"}>{"→"}</span></button>
 <button className={"banner-process"} type={"button"} onClick={navProcess}>{"See Our Process "}<span aria-hidden={"true"}>{"→"}</span></button>
 </section>
-<section aria-label={"Product assurances"} className={"product-assurances"} style={cssStyle("background:#f8f3ec;padding:24px 0")}>
+<section aria-label={"Product assurances"} className={"product-assurances"} style={cssStyle("background:#f8f3ec;padding:0")}>
 <div className={"assurance-grid"}>
 <img src={"/assets/pure-turmeric.png"} alt={"Pure Turmeric Powder"} width={"768"} height={"768"} loading={"lazy"} />
 <img src={"/assets/no-artificial-colours.png"} alt={"No Artificial Colours"} width={"768"} height={"768"} loading={"lazy"} />
@@ -49,7 +51,7 @@ return <>
 </div>
 <div className={"card-pad-lg"} style={cssStyle("padding:28px 22px 24px")}>
 <h3 style={cssStyle("font:700 clamp(22px,4vw,30px)/1.2 Montserrat,sans-serif;color:#0F3F21;margin:0 0 10px")}>{"AYSHVA Turmeric Powder "}{`(${sizeLabel})`}</h3> 
-<p style={cssStyle("font:400 16px/1.6 'DM Sans',sans-serif;color:#4A5A4E;margin:0 0 32px")}>{"Farm-grown, stone-ground, hygienically packed."}</p>
+<p style={cssStyle("font:400 16px/1.6 'DM Sans',sans-serif;color:#4A5A4E;margin:0 0 32px")}>{"Farm grown, stone ground, hygienically packed."}</p>
 <fieldset style={cssStyle("border:none;padding:0;margin:0 0 30px")}>
 <legend style={cssStyle("font:600 12px 'DM Sans',sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#0F3F21;padding:0;margin:0 0 14px")}>{"Pack size"}</legend>
 <div role={"radiogroup"} aria-label={"Pack size"} style={cssStyle("display:flex;gap:12px")}>
@@ -94,7 +96,7 @@ return <>
 <div className={"g-4"} style={cssStyle("display:grid;grid-template-columns:1fr;gap:20px;margin-bottom:20px")}>
 <article style={cssStyle("background:#fff;border:1px solid rgba(15,63,33,.1);border-radius:20px;padding:34px 30px 36px")}>
 <p style={cssStyle("font:700 13px 'DM Sans',sans-serif;color:#E8A329;margin:0 0 26px")}>{"01"}</p>
-<h3 style={cssStyle("font:600 21px/1.3 Montserrat,sans-serif;color:#0F3F21;margin:0 0 12px")}>{"Farm-grown premium turmeric"}</h3>
+<h3 style={cssStyle("font:600 21px/1.3 Montserrat,sans-serif;color:#0F3F21;margin:0 0 12px")}>{"Farm grown premium turmeric"}</h3>
 <p style={cssStyle("font:400 15px/1.7 'DM Sans',sans-serif;color:#4A5A4E;margin:0")}>{"Cultivated on AYSHVA's own land in Jalna, not bought from open markets."}</p>
 </article>
 <article style={cssStyle("background:#fff;border:1px solid rgba(15,63,33,.1);border-radius:20px;padding:34px 30px 36px")}>
@@ -172,27 +174,27 @@ return <>
 <article style={cssStyle("background:#fff;border:1px solid rgba(15,63,33,.12);border-radius:22px;padding:40px")}>
 <div style={cssStyle("display:flex;align-items:center;justify-content:space-between;margin-bottom:28px")}>
 <h3 style={cssStyle("font:600 22px Montserrat,sans-serif;color:#0F3F21;margin:0")}>{"Laboratory report"}</h3>
-<span style={cssStyle("padding:6px 14px;border-radius:999px;background:rgba(192,127,42,.12);font:600 11px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#C07F2A")}>{"Awaiting upload"}</span>
 </div>
 <dl className={"g-dl"} style={cssStyle("margin:0;display:grid;grid-template-columns:1fr;row-gap:16px;column-gap:24px")}>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"Report title"}</dt>
-<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Laboratory report]"}</dd>
+<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.title}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"Laboratory name"}</dt>
-<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Laboratory name]"}</dd>
+<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.laboratoryName}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"Report date"}</dt>
-<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Report date]"}</dd>
+<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.reportDate}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"Batch / sample no."}</dt>
-<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Batch number]"}</dd>
+<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.batchNumber}</dd>
 <dt style={cssStyle("font:500 14px 'DM Sans',sans-serif;color:#7A8A7E;margin:0")}>{"Tested parameters"}</dt>
-<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{"[Tested parameters]"}</dd>
+<dd style={cssStyle("font:500 15px 'DM Sans',sans-serif;color:#0F3F21;margin:0")}>{labReport.testedParameters}</dd>
 </dl>
-<p style={cssStyle("font:400 14px/1.7 'DM Sans',sans-serif;color:#7A8A7E;margin:26px 0 0;padding-top:22px;border-top:1px solid rgba(15,63,33,.1)")}>{"No curcumin percentage is shown until a verified report is published here."}</p>
+<p style={cssStyle("font:400 14px/1.7 'DM Sans',sans-serif;color:#7A8A7E;margin:22px 0 0;padding-top:22px;border-top:1px solid rgba(15,63,33,.1)")}>{labReport.curcuminNote}</p>
+<LabReportDownloadLink variant={"outline"}>{"Download laboratory report (PDF)"}</LabReportDownloadLink>
 </article>
 <div style={cssStyle("display:grid;gap:20px")}>
 <article style={cssStyle("background:#0F3F21;border-radius:22px;padding:34px 34px 36px")}>
 <h3 style={cssStyle("font:600 20px Montserrat,sans-serif;color:#F8F3EC;margin:0 0 14px")}>{"Certifications"}</h3>
-<p style={cssStyle("font:400 15px/1.7 'DM Sans',sans-serif;color:rgba(248,243,236,.72);margin:0 0 20px")}>{"[Certification] · [Food licence number]"}</p>
-<p style={cssStyle("font:400 14px/1.6 'DM Sans',sans-serif;color:rgba(248,243,236,.55);margin:0")}>{"Badges appear only once the certificate is on file."}</p>
+<p style={cssStyle("font:400 15px/1.7 'DM Sans',sans-serif;color:rgba(248,243,236,.72);margin:0 0 20px")}>{labReport.certification}{" · "}{labReport.foodLicenceNumber}</p>
+<p style={cssStyle("font:400 14px/1.6 'DM Sans',sans-serif;color:rgba(248,243,236,.55);margin:0")}>{"The PDF includes detailed results, test methods, and limits for every parameter."}</p>
 </article>
 <article style={cssStyle("background:#EFE6D8;border-radius:22px;padding:34px")}>
 <h3 style={cssStyle("font:600 20px Montserrat,sans-serif;color:#0F3F21;margin:0 0 14px")}>{"Ingredient declaration"}</h3>
@@ -224,7 +226,7 @@ return <>
 <div className={"wrap g-final"} style={cssStyle("max-width:1320px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr;gap:24px;align-items:center")}>
 <img src={"/assets/bundled/8326c99c-3c84-4aca-8ce0-10fd0cedfa55.png"} alt={"AYSHVA Turmeric Powder pack held in hands"} className={"pack-shot"} style={cssStyle("width:min(200px,100%);height:clamp(180px,50vw,250px);object-fit:cover;border-radius:16px")} />
 <div>
-<h2 id={"final"} style={cssStyle("font:700 clamp(24px,5.5vw,38px)/1.15 Montserrat,sans-serif;color:#F8F3EC;margin:0 0 14px;max-width:22ch")}>{"Bring farm-grown turmeric into your everyday kitchen."}</h2>
+<h2 id={"final"} style={cssStyle("font:700 clamp(24px,5.5vw,38px)/1.15 Montserrat,sans-serif;color:#F8F3EC;margin:0 0 14px;max-width:22ch")}>{"Bring farm grown turmeric into your everyday kitchen."}</h2>
 <div role={"radiogroup"} aria-label={"Pack size"} style={cssStyle("display:flex;gap:10px;margin-top:22px")}>
 {sizesDark.map((s, index) => <React.Fragment key={index}>
 <button type={"button"} role={"radio"} aria-checked={s.checked} onClick={s.select} style={cssStyle(s.style)}>{s.label}</button>

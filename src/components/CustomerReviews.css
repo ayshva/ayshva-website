@@ -5,7 +5,7 @@
 .reviews-heading p:not(.reviews-eyebrow) { font:400 16px/1.7 'DM Sans',sans-serif;color:#4a5a4e;margin:0; }
 .reviews-toggle { min-height:44px;padding:10px 20px;border:1px solid rgba(15,63,33,.2);border-radius:999px;background:rgba(255,255,255,.65);color:#0f3f21;cursor:pointer;font-size:13px; }
 .reviews-viewport { overflow-x:auto;overflow-y:hidden;padding:12px 0 24px; }
-.reviews-track { display:flex;width:max-content;animation:reviews-scroll 100s linear infinite; }
+.reviews-track { display:flex;width:max-content;animation:reviews-scroll 20s linear infinite; }
 .reviews-group { display:flex;flex-shrink:0;align-items:stretch;gap:20px;padding-right:20px; }
 .review-image { display:flex;flex-direction:column;flex:0 0 auto;width:calc(100vw - 48px);max-width:540px;padding:8px;border:1px solid rgba(15,63,33,.1);border-radius:20px;background:#fffdf9;box-shadow:0 8px 22px -14px rgba(15,63,33,.3);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease; }
 .review-image img { display:block;width:100%;height:auto;aspect-ratio:2.54;object-fit:contain;border-radius:13px;background:#183f20; }

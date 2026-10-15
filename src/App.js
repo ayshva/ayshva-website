@@ -73,9 +73,11 @@ export default class App extends React.Component {
       return total + packPrice * line.qty;
     }, 0);
 
+    const deliveryFeeValue = this.state.cart.length > 0 ? 40 : 0;
+    const orderTotalValue = cartSubtotalValue + deliveryFeeValue;
     const orderLines = this.state.cart.map((line) => line.qty + ' × AYSHVA Turmeric Powder (' + line.size + ') — ' + prices[line.size]).join('\n');
     const checkoutMessage = orderLines
-      ? 'Hello AYSHVA, I would like to place this order:\n\n' + orderLines + '\n\nSubtotal: ₹' + cartSubtotalValue.toLocaleString('en-IN') + '\n\nPlease share delivery details and payment options.'
+      ? 'Hello AYSHVA, I would like to place this order:\n\n' + orderLines + '\n\nSubtotal: ₹' + cartSubtotalValue.toLocaleString('en-IN') + '\nDelivery fee: ₹' + deliveryFeeValue.toLocaleString('en-IN') + '\nTotal: ₹' + orderTotalValue.toLocaleString('en-IN') + '\n\nPlease share delivery details and payment options.'
       : 'Hello AYSHVA, I would like to place an order. Please help me choose a pack.';
 
     return {
@@ -101,6 +103,8 @@ export default class App extends React.Component {
       })),
       cartCount: this.state.cart.reduce((n, l) => n + l.qty, 0),
       cartSubtotal: '₹' + cartSubtotalValue.toLocaleString('en-IN'),
+      deliveryFee: '₹' + deliveryFeeValue.toLocaleString('en-IN'),
+      cartTotal: '₹' + orderTotalValue.toLocaleString('en-IN'),
       hasCart: this.state.cart.length > 0,
       cartEmpty: this.state.cart.length === 0,
       cartOpen: this.state.cartOpen,
