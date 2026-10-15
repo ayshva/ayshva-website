@@ -1,4 +1,4 @@
-# AYSHVA React website
+# AYSHVA React website 
 
 React migration of the original AYSHVA website. The app renders native React components with local images and fonts; it does not load the old HTML bundle or its custom runtime.
 
