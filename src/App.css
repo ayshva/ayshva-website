@@ -339,6 +339,14 @@
   .cart-panel { width: min(460px, 100%); max-width: 100%; }
   .wa-fab { z-index: 50; }
   .process-line { }
+  .pack-gallery-track { scrollbar-width: none; -ms-overflow-style: none; }
+  .pack-gallery-track::-webkit-scrollbar { display: none; }
+
+  @media (max-width: 1099px) {
+    /* The timeline rule is the first child, so odd rows are stages 2, 4, and 6. */
+    .process-stage:nth-child(odd) > div:first-child { order: 2; }
+    .process-stage:nth-child(odd) > div:last-child { order: 1; }
+  }
 
   /* Phone */
   @media (max-width: 699px) {

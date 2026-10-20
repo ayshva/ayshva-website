@@ -5,6 +5,15 @@ import { labReport } from '../labReport';
 import { cssStyle } from '../viewUtils';
 export default function HomePage({values}) {
 const {navShop, navStory, navProcess, navContact, waHref, buyNow, packLabel, sizes, price, sizeLabel, stockLine, dec, qty, inc, addToCart, announce, waSizeHref, sizesDark} = values;
+const galleryRef = React.useRef(null);
+const [activeGalleryIndex, setActiveGalleryIndex] = React.useState(0);
+const packGalleryImages = [
+  {src: "/assets/bundled/ee61a4bc-1d15-45e4-a8f8-c3ddc1e1ba4e.png", alt: "AYSHVA Turmeric Powder pack on a wooden table"},
+  {src: "/images/process/harvesting.jpg", alt: "Fresh turmeric roots being harvested by hand"},
+  {src: "/images/process/washing.jpg", alt: "Fresh turmeric roots being washed by hand"},
+  {src: "/images/process/grinding.jpg", alt: "Turmeric powder coming from a grinding mill"},
+  {src: "/images/process/packaging.jpg", alt: "AYSHVA turmeric powder being packed in a clean environment"}
+];
 return <>
 <main data-screen-label={"Home"}>
 
@@ -45,9 +54,16 @@ return <>
 <h2 id={"quick-buy"} style={cssStyle("font:700 clamp(25px,5vw,46px)/1.12 Montserrat,sans-serif;letter-spacing:-.02em;color:#0F3F21;margin:0;white-space:nowrap")}>{"Choose your pack"}</h2>
 </div>
 <div className={"g-product"} style={cssStyle("display:grid;grid-template-columns:1fr;gap:0;background:#fff;border-radius:28px;overflow:hidden;border:1px solid rgba(15,63,33,.1);box-shadow:0 30px 60px -40px rgba(15,63,33,.3)")}>
-<div style={cssStyle("position:relative;background:#EFE6D8;min-height:clamp(220px,70vw,560px)")}>
-<img src={"/assets/bundled/ee61a4bc-1d15-45e4-a8f8-c3ddc1e1ba4e.png"} alt={"AYSHVA Turmeric Powder pack"} style={cssStyle("position:absolute;inset:0;width:100%;height:100%;object-fit:cover")} />
-<span style={cssStyle("position:absolute;left:24px;bottom:24px;padding:8px 16px;border-radius:999px;background:rgba(248,243,236,.94);font:600 12px 'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#0F3F21")}>{packLabel}</span>
+<div style={cssStyle("position:relative")}>
+<div ref={galleryRef} className={"pack-gallery-track"} role={"region"} aria-label={"AYSHVA product and process photos"} tabIndex={0} onScroll={(event) => setActiveGalleryIndex(Math.round(event.currentTarget.scrollLeft / event.currentTarget.clientWidth))} style={cssStyle("position:relative;display:flex;width:100%;height:clamp(260px,55vw,460px);overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scroll-behavior:smooth;background:#EFE6D8")}>
+{packGalleryImages.map((image, index) => <div key={image.src} style={cssStyle("flex:0 0 100%;width:100%;height:100%;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;scroll-snap-stop:always")}>
+<img src={image.src} alt={image.alt} width={index === 0 ? 1086 : 1448} height={index === 0 ? 1448 : 1086} loading={index === 0 ? "eager" : "lazy"} decoding={"async"} style={cssStyle("display:block;width:100%;height:100%;object-fit:contain;object-position:center")}/>
+</div>)}
+</div>
+<span style={cssStyle("position:absolute;left:24px;bottom:52px;padding:8px 16px;border-radius:999px;background:rgba(248,243,236,.94);font:600 12px 'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#0F3F21;pointer-events:none")}>{packLabel}</span>
+<div aria-label={"Choose a product photo"} style={cssStyle("display:flex;align-items:center;justify-content:center;gap:9px;min-height:40px;background:#EFE6D8")}>
+{packGalleryImages.map((image, index) => <button key={image.src} type={"button"} aria-label={`Show image ${index + 1}: ${image.alt}`} aria-current={activeGalleryIndex === index ? "true" : undefined} onClick={() => galleryRef.current?.scrollTo({left: index * galleryRef.current.clientWidth, behavior: "smooth"})} style={cssStyle(`width:${activeGalleryIndex === index ? 22 : 8}px;height:8px;padding:0;border:0;border-radius:999px;background:${activeGalleryIndex === index ? "#0F3F21" : "rgba(15,63,33,.28)"};cursor:pointer;transition:width .2s ease,background .2s ease`)} />)}
+</div>
 </div>
 <div className={"card-pad-lg"} style={cssStyle("padding:28px 22px 24px")}>
 <h3 style={cssStyle("font:700 clamp(22px,4vw,30px)/1.2 Montserrat,sans-serif;color:#0F3F21;margin:0 0 10px")}>{"AYSHVA Turmeric Powder "}{`(${sizeLabel})`}</h3> 
@@ -137,25 +153,25 @@ return <>
 </div>
 <div className={"g-4"} style={cssStyle("display:grid;grid-template-columns:1fr;gap:24px")}>
 <article>
-<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px")}><div className="image-placeholder" role="img" aria-label="Harvest photo">{"Harvest photo"}</div></div>
+<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px;background:#eee8de")}><img src="/images/process/harvesting.jpg" alt="Fresh turmeric roots being harvested by hand" width="1448" height="1086" loading="lazy" decoding="async" style={cssStyle("display:block;width:100%;height:100%;object-fit:cover;object-position:center")}/></div>
 <p style={cssStyle("font:600 12px 'DM Sans',sans-serif;letter-spacing:.18em;color:#C07F2A;margin:0 0 8px")}>{"Stage 01"}</p>
 <h3 style={cssStyle("font:600 20px/1.3 Montserrat,sans-serif;color:#0F3F21;margin:0 0 8px")}>{"Grown and Harvested"}</h3>
 <p style={cssStyle("font:400 15px/1.65 'DM Sans',sans-serif;color:#4A5A4E;margin:0")}>{"Rhizomes are lifted from our own fields at maturity."}</p>
 </article>
 <article>
-<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px")}><div className="image-placeholder" role="img" aria-label="Sorting / boiling photo">{"Sorting / boiling photo"}</div></div>
+<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px;background:#eee8de")}><img src="/images/process/washing.jpg" alt="Fresh turmeric roots being washed by hand" width="1448" height="1086" loading="lazy" decoding="async" style={cssStyle("display:block;width:100%;height:100%;object-fit:cover;object-position:center")}/></div>
 <p style={cssStyle("font:600 12px 'DM Sans',sans-serif;letter-spacing:.18em;color:#C07F2A;margin:0 0 8px")}>{"Stage 02"}</p>
 <h3 style={cssStyle("font:600 20px/1.3 Montserrat,sans-serif;color:#0F3F21;margin:0 0 8px")}>{"Selected and Prepared"}</h3>
 <p style={cssStyle("font:400 15px/1.65 'DM Sans',sans-serif;color:#4A5A4E;margin:0")}>{"Sorted, cleaned, boiled, sun-dried and polished."}</p>
 </article>
 <article>
-<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px")}><div className="image-placeholder" role="img" aria-label="Grinding photo">{"Grinding photo"}</div></div>
+<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px;background:#eee8de")}><img src="/images/process/grinding.jpg" alt="Turmeric powder coming from a grinding mill" width="1448" height="1086" loading="lazy" decoding="async" style={cssStyle("display:block;width:100%;height:100%;object-fit:cover;object-position:center")}/></div>
 <p style={cssStyle("font:600 12px 'DM Sans',sans-serif;letter-spacing:.18em;color:#C07F2A;margin:0 0 8px")}>{"Stage 03"}</p>
 <h3 style={cssStyle("font:600 20px/1.3 Montserrat,sans-serif;color:#0F3F21;margin:0 0 8px")}>{"Ground with Care"}</h3>
 <p style={cssStyle("font:400 15px/1.65 'DM Sans',sans-serif;color:#4A5A4E;margin:0")}>{"Ground slowly so colour and aroma survive the mill."}</p>
 </article>
 <article>
-<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px")}><div className="image-placeholder" role="img" aria-label="Packing photo">{"Packing photo"}</div></div>
+<div style={cssStyle("height:clamp(180px,48vw,300px);border-radius:18px;overflow:hidden;margin-bottom:20px;background:#eee8de")}><img src="/images/process/packaging.jpg" alt="AYSHVA turmeric powder being packed in a clean environment" width="1448" height="1086" loading="lazy" decoding="async" style={cssStyle("display:block;width:100%;height:100%;object-fit:cover;object-position:center")}/></div>
 <p style={cssStyle("font:600 12px 'DM Sans',sans-serif;letter-spacing:.18em;color:#C07F2A;margin:0 0 8px")}>{"Stage 04"}</p>
 <h3 style={cssStyle("font:600 20px/1.3 Montserrat,sans-serif;color:#0F3F21;margin:0 0 8px")}>{"Hygienically Packed"}</h3>
 <p style={cssStyle("font:400 15px/1.65 'DM Sans',sans-serif;color:#4A5A4E;margin:0")}>{"Sealed in a clean environment to hold freshness."}</p>
@@ -224,7 +240,7 @@ return <>
 </section>
 <section aria-labelledby={"final"} style={cssStyle("background:#0F3F21;padding:clamp(48px,7vw,88px) 0")}>
 <div className={"wrap g-final"} style={cssStyle("max-width:1320px;margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1fr;gap:24px;align-items:center")}>
-<img src={"/assets/bundled/8326c99c-3c84-4aca-8ce0-10fd0cedfa55.png"} alt={"AYSHVA Turmeric Powder pack held in hands"} className={"pack-shot"} style={cssStyle("width:min(200px,100%);height:clamp(180px,50vw,250px);object-fit:cover;border-radius:16px")} />
+<img src={"/assets/bundled/8326c99c-3c84-4aca-8ce0-10fd0cedfa55.png"} alt={"AYSHVA Turmeric Powder pack held in hands"} className={"pack-shot"} width={1122} height={1402} loading={"lazy"} decoding={"async"} style={cssStyle("width:min(200px,100%);height:clamp(180px,50vw,250px);object-fit:contain;object-position:center;background:#EFE6D8;border-radius:16px")} />
 <div>
 <h2 id={"final"} style={cssStyle("font:700 clamp(24px,5.5vw,38px)/1.15 Montserrat,sans-serif;color:#F8F3EC;margin:0 0 14px;max-width:22ch")}>{"Bring farm grown turmeric into your everyday kitchen."}</h2>
 <div role={"radiogroup"} aria-label={"Pack size"} style={cssStyle("display:flex;gap:10px;margin-top:22px")}>

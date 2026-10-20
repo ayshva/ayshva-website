@@ -126,8 +126,8 @@ export default class App extends React.Component {
       waSizeHref: this.wa('Hello AYSHVA, I need help choosing between the 200g and 500g pack.'),
       waCartHref: this.wa('Hello AYSHVA, I need assistance with my order.'),
       checkoutHref: this.wa(checkoutMessage),
-      shot1Style: 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .2s;opacity:' + (this.state.shot === 'packTable' ? '1' : '0'),
-      shot2Style: 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .2s;opacity:' + (this.state.shot === 'packHands' ? '1' : '0'),
+      shot1Style: 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;transition:opacity .2s;opacity:' + (this.state.shot === 'packTable' ? '1' : '0'),
+      shot2Style: 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;transition:opacity .2s;opacity:' + (this.state.shot === 'packHands' ? '1' : '0'),
       pickShot1: () => this.setState({ shot: 'packTable' }),
       pickShot2: () => this.setState({ shot: 'packHands' }),
       faqs: this.faqData().map((f, i) => ({

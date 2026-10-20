@@ -16,10 +16,10 @@ return <>
 </div>
 <div className={"g-thumbs g-4"} style={cssStyle("display:grid;grid-template-columns:1fr;gap:16px")}>
 <button type={"button"} onClick={pickShot1} aria-label={"View pack on table"} style={cssStyle("padding:0;border:none;border-radius:14px;overflow:hidden;cursor:pointer;background:#EFE6D8;height:120px")}>
-<img src={"/assets/bundled/ee61a4bc-1d15-45e4-a8f8-c3ddc1e1ba4e.png"} alt={""} style={cssStyle("display:block;width:100%;height:100%;object-fit:cover")} />
+<img src={"/assets/bundled/ee61a4bc-1d15-45e4-a8f8-c3ddc1e1ba4e.png"} alt={""} style={cssStyle("display:block;width:100%;height:100%;object-fit:contain")} />
 </button>
 <button type={"button"} onClick={pickShot2} aria-label={"View pack in hands"} style={cssStyle("padding:0;border:none;border-radius:14px;overflow:hidden;cursor:pointer;background:#EFE6D8;height:120px")}>
-<img src={"/assets/bundled/8326c99c-3c84-4aca-8ce0-10fd0cedfa55.png"} alt={""} style={cssStyle("display:block;width:100%;height:100%;object-fit:cover")} />
+<img src={"/assets/bundled/8326c99c-3c84-4aca-8ce0-10fd0cedfa55.png"} alt={""} style={cssStyle("display:block;width:100%;height:100%;object-fit:contain")} />
 </button>
 <div style={cssStyle("height:120px;border-radius:14px;overflow:hidden")}><div className="image-placeholder" role="img" aria-label="Pack back / label">{"Pack back / label"}</div></div>
 <div style={cssStyle("height:120px;border-radius:14px;overflow:hidden")}><div className="image-placeholder" role="img" aria-label="Powder macro">{"Powder macro"}</div></div>
